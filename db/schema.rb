@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_110218) do
+ActiveRecord::Schema.define(version: 2020_01_10_113950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 2020_01_10_110218) do
 
   create_table "resources", force: :cascade do |t|
     t.string "name"
-    t.string "availibility"
     t.bigint "calendar_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "availibility"
     t.index ["calendar_id"], name: "index_resources_on_calendar_id"
   end
 
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 2020_01_10_110218) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "flat_id"
+    t.index ["flat_id"], name: "index_users_on_flat_id"
   end
 
   add_foreign_key "bookings", "booking_statuses"
@@ -84,4 +86,5 @@ ActiveRecord::Schema.define(version: 2020_01_10_110218) do
   add_foreign_key "bookings", "users"
   add_foreign_key "resources", "calendars"
   add_foreign_key "templates", "users"
+  add_foreign_key "users", "flats"
 end
