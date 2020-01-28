@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_143944) do
+ActiveRecord::Schema.define(version: 2020_01_28_144610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,10 @@ ActiveRecord::Schema.define(version: 2020_01_28_143944) do
     t.string "end_date"
     t.string "name"
     t.bigint "user_id"
-    t.bigint "calendar_id"
     t.bigint "template_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "occasion"
-    t.index ["calendar_id"], name: "index_bookings_on_calendar_id"
     t.index ["template_id"], name: "index_bookings_on_template_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -34,14 +32,6 @@ ActiveRecord::Schema.define(version: 2020_01_28_143944) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "calendars", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "building_id"
-    t.index ["building_id"], name: "index_calendars_on_building_id"
   end
 
   create_table "flats", force: :cascade do |t|
@@ -78,9 +68,7 @@ ActiveRecord::Schema.define(version: 2020_01_28_143944) do
     t.index ["flat_id"], name: "index_users_on_flat_id"
   end
 
-  add_foreign_key "bookings", "calendars"
   add_foreign_key "bookings", "users"
-  add_foreign_key "calendars", "buildings"
   add_foreign_key "templates", "users"
   add_foreign_key "users", "flats"
 end
