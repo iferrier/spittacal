@@ -4,9 +4,16 @@ class FlatsController < ApplicationController
   end
 
   def create
+    @flat = Flat.new
   end
 
   def new
+    @flat = Flat.new(flat_params)
+    if @flat.save
+      redirect_to building_path(@building)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -16,5 +23,11 @@ class FlatsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def flat_params
+    params.require(@flat).permit(:name, :color)
   end
 end
