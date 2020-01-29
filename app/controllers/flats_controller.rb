@@ -8,6 +8,7 @@ class FlatsController < ApplicationController
   end
 
   def new
+    @building = building.find(params[:id])
     @flat = Flat.new(flat_params)
     if @flat.save
       redirect_to building_path(@building)
