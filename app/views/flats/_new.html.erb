@@ -1,4 +1,4 @@
-<%= simple_form_for(@building, @flat) do |f| %>
+<%= simple_form_for [@building, @flat] do |f| %>
 <%= f.input :name %>
 <%= f.input :color %>
 <%= f.submit %>
