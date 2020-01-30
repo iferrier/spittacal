@@ -8,8 +8,9 @@ class FlatsController < ApplicationController
   end
 
   def new
-    @building = building.find(params[:id])
+    @building = Building.find(params[:building_id])
     @flat = Flat.new(flat_params)
+    @flat.building = @building
     if @flat.save
       redirect_to building_path(@building)
     else
@@ -29,6 +30,6 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(@flat).permit(:name, :color)
+    params.require(:flat).permit(:name, :color)
   end
 end

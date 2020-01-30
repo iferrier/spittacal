@@ -1,7 +1,8 @@
 <h1>Welcome to <%= @building.name %></h1>
 
 <%= render 'flats/index', flats: @flats %>
-<%= render 'flats/new', flat: @flat %>
+
+<%= link_to 'Add a flat here', new_building_flat_path(@building) %>
 
 
 
