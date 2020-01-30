@@ -18,6 +18,8 @@ class BuildingsController < ApplicationController
 
   def show
     @building = Building.find(params[:id])
+    @flats = @building.flats
+    @flat = Flat.new
   end
 
   private
