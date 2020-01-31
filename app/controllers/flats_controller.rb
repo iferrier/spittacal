@@ -3,11 +3,12 @@ class FlatsController < ApplicationController
     @flats = Flat.all
   end
 
-  def create
+  def new
+    @building = Building.find(params[:building_id])
     @flat = Flat.new
   end
 
-  def new
+  def create
     @building = Building.find(params[:building_id])
     @flat = Flat.new(flat_params)
     @flat.building = @building
