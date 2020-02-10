@@ -20,13 +20,14 @@ class FlatsController < ApplicationController
   end
 
   def edit
-    @building = Building.find(params[:id])
-    @flat = Flat.find(params[:building_id])
+    @flat = Flats.find(params[:id])
+    @building = @flat.building
   end
 
   def update
-    @building = Building.find(params[:id])
-    @flat = Flat.find(params[:building_id])
+    # @building = Building.find(params[:building_id])
+    @flat = Flats.find(params[:id])
+    @building = @flat.building
     @flat.update(flat_params)
     redirect_to building_path(@building)
   end

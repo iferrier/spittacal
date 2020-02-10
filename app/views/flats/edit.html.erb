@@ -1,7 +1,3 @@
 <h1>Edit the flat here</h1>
-<%= simple_form_for [@flat, @building] do |f| %>
-<%= f.input :name %>
-<%= f.input :color %>
-<%= f.submit %>
-<% end %>
+<%= render 'form', building: @building, flat: @flat %>
 
