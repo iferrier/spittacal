@@ -20,12 +20,22 @@ class FlatsController < ApplicationController
   end
 
   def edit
+    @building = Building.find(params[:id])
+    @flat = Flat.find(params[:building_id])
   end
 
   def update
+    @building = Building.find(params[:id])
+    @flat = Flat.find(params[:building_id])
+    @flat.update(flat_params)
+    redirect_to building_path(@building)
   end
 
   def destroy
+    @building = Building.find(params[:id])
+    @flat = Flat.find(params[:building_id])
+    @flat.destroy
+    redirect_to building_path(@flat.building)
   end
 
   private
