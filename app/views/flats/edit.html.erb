@@ -1,2 +1,7 @@
-<h1>Flats#edit</h1>
-<p>Find me in app/views/flats/edit.html.erb</p>
+<h1>Edit the flat here</h1>
+<%= simple_form_for [@flat, @building] do |f| %>
+<%= f.input :name %>
+<%= f.input :color %>
+<%= f.submit %>
+<% end %>
+

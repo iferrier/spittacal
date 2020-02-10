@@ -1,4 +1,9 @@
+<ul>
 <% @flats.each do |flat| %>
-<%= flat.name %>
-<%= flat.color %>
+  <li><%= flat.name %> (<%= flat.color %>)
+      <%= link_to 'Edit', edit_building_flat_path(flat) %>
+      <%= link_to 'Delete', building_flat_path(flat), method: :delete, data: { confirm: "Are you sure?" }%>
+  </li>
 <% end %>
+</ul>
+
