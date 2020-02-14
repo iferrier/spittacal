@@ -19,4 +19,10 @@ class UsersController < ApplicationController
 
   def delete
   end
+
+  private
+
+  def set_building
+    @building = Building.find(params[:building_id])
+  end
 end
