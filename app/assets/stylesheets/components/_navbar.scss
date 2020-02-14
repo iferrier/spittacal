@@ -1,12 +1,35 @@
-.navbar-lewagon {
+// styling navbar
+.navbar {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   background: white;
+  position: sticky;
+  height: 90px;
+  border-bottom: 2px solid #EFA48B;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+// styling logo
+.logo {
+  margin-left: 20px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+
+// Styling buttons
+.elements-right {
+  display: flex;
+}
+
+.new-booking {
+  color: #C96480;
+  margin: 0 25px;
+  font-size: 20px;
+  padding-top: 16px;
+}
+
+.my-profile {
+  color: #F7B267;
+  margin: 0 35px 0 25px;
+  font-size: 20px;
+  padding-top: 16px;
 }
