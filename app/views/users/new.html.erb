@@ -1,8 +1,2 @@
 <h1>Create a new user for <%= @building.name %></h1>
-<%= simple_form_for [@building, @user] do |f| %>
-<%= f.input :first_name %>
-<%= f.input :last_name %>
-<%= f.input :email %>
-<%= f.association :flat, value_method: :id %>
-<%= f.submit 'Create new user' %>
-<% end %>
+<%= render 'form' %>

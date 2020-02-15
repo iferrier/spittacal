@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_building
 
+  def index
+  end
+
+  def show
+  end
+
   def new
     @user = User.new
   end
@@ -15,12 +21,6 @@ class UsersController < ApplicationController
     else
       render :new
     end
-  end
-
-  def index
-  end
-
-  def show
   end
 
   def edit

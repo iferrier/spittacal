@@ -1,0 +1,7 @@
+<%= simple_form_for [@building, @user] do |f| %>
+<%= f.input :first_name %>
+<%= f.input :last_name %>
+<%= f.input :email %>
+<%= f.association :flat, value_method: :id %>
+<%= f.submit 'Submit' %>
+<% end %>
