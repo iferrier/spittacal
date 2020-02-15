@@ -1,1 +1,12 @@
 <h1>This is <%= @flat.name %></h1>
+
+<p>Following users are registered:</p>
+
+<ul>
+<% @users.each do |user| %>
+<li><%= link_to "#{user.first_name} #{user.last_name}", building_user_path(user.building, user) %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Back to building', building_path(@building) %>
+

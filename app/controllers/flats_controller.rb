@@ -21,6 +21,7 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
+    @users = @flat.users
   end
 
   def edit

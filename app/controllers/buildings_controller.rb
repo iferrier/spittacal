@@ -20,6 +20,7 @@ class BuildingsController < ApplicationController
     @building = Building.find(params[:id])
     @flats = @building.flats
     @flat = Flat.new
+    @user = User.new
   end
 
   private
