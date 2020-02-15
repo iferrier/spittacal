@@ -1,7 +1,5 @@
 <ul>
-<% @flats.each do |flat| %>
-  <li><%= link_to flat.name , building_flat_path(flat.building, flat) %>
-  </li>
-<% end %>
+  <% @flats.each do |flat| %>
+  <li><%= link_to flat.name,  building_flat_path(flat.building, flat) %></li>
+  <% end %>
 </ul>
-

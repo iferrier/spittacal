@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_building
+  before_action :set_flat, only: [:index, :show, :edit, :update, :delete]
 
   def index
+    @users = @flat.users
   end
 
   def show
@@ -36,6 +38,10 @@ class UsersController < ApplicationController
 
   def set_building
     @building = Building.find(params[:building_id])
+  end
+
+  def set_flat
+    @flat = Flat.find(params[:flat_id])
   end
 
   def user_params
