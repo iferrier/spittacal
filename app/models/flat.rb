@@ -1,4 +1,4 @@
 class Flat < ApplicationRecord
   has_many :users
-  belongs_to :building
+  belongs_to :building, dependent: :destroy
 end
