@@ -38,7 +38,9 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    @flat = @user.flat
     @user.destroy
+    redirect_to building_flat_path(@building, @flat)
   end
 
   private
