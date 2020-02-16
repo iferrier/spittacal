@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_building
-  before_action :set_flat, only: %i[index show]
+  before_action :set_flat, only: %i[index]
 
   def index
     @users = @flat.users
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def new
