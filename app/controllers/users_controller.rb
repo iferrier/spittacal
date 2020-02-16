@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_building
-  before_action :set_flat, only: [:index, :show, :edit, :update, :delete]
+  before_action :set_flat, only: %i[index show]
 
   def index
     @users = @flat.users
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.building = @building
-    @flat = Flat.find(user_params[:flat_id].to_i)
+    @flat = Flat.find(user_params[:flat_id])
     @user.flat = @flat
     if @user.save
       redirect_to building_flat_path(@building, @flat)
@@ -26,12 +26,21 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
+    @user = User.find(params[:id])
+    @flat = @user.flat
+    @user.update(user_params)
+    redirect_to building_flat_path(@building, @flat)
   end
 
-  def delete
+  def destroy
+    @user = User.find(params[:id])
+    @flat = @user.flat
+    @user.destroy
+    redirect_to building_flat_path(@building, @flat)
   end
 
   private
