@@ -4,7 +4,10 @@
 
 <ul>
 <% @users.each do |user| %>
-<li><%= link_to "#{user.first_name} #{user.last_name}", building_user_path(user.building, user) %></li>
+<li><%= link_to "#{user.first_name} #{user.last_name}", building_user_path(user.building, user) %>
+  <%= link_to 'Edit', edit_building_user_path(user.building, user) %>
+  <%= link_to 'Delete', building_user_path(user.building, user), method: :delete, data: { confirm: 'Are you sure?'} %>
+</li>
 <% end %>
 </ul>
 
