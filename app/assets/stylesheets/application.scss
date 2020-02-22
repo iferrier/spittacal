@@ -17,25 +17,25 @@ body {
   background-color: white;
 }
 
-@media(min-width: 993px) {
+@media(min-width: $large-screen) {
   .application-container {
     margin: 50px 100px;
   }
 }
 
-@media(max-width: 992px) {
+@media(max-width: $desktop-screen) {
   .application-container {
     margin: 50px 70px;
   }
 }
 
-@media(max-width: 768px) {
+@media(max-width: $medium-screen) {
   .application-container {
     margin: 30px 50px;
   }
 }
 
-@media(max-width: 576px) {
+@media(max-width: $small-screen) {
   .application-container {
     margin: 20px 30px;
   }
