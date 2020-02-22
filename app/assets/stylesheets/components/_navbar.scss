@@ -6,7 +6,7 @@
   background: white;
   position: sticky;
   height: 90px;
-  border-bottom: 2px solid #EFA48B;
+  border-bottom: 2px solid $custom-orange;
 }
 
 // styling logo
@@ -21,14 +21,14 @@
 }
 
 .new-booking {
-  color: #C96480;
+  color: $custom-pink;
   margin: 0 25px;
   font-size: 20px;
   padding-top: 16px;
 }
 
 .my-profile {
-  color: #F7B267;
+  color: $custom-yellow;
   margin: 0 35px 0 25px;
   font-size: 20px;
   padding-top: 16px;
