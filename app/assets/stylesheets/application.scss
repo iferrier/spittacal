@@ -22,7 +22,7 @@ a {
   color: black;
   &:hover {
     text-decoration: none;
-    color: $blue;
+    color: $custom-blue;
   }
 }
 
@@ -51,7 +51,6 @@ a {
 }
 
 .simple-calendar {
-
 
   .day {
   }
