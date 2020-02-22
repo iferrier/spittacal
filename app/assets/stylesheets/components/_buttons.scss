@@ -6,3 +6,13 @@
     text-decoration: underline;
   }
 }
+
+.create-button {
+  text-decoration: none;
+  color: $custom-pink;
+  border: none;
+  &:hover {
+    color: $custom-pink;
+    text-decoration: underline;
+  }
+}
