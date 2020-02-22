@@ -17,6 +17,30 @@ body {
   background-color: white;
 }
 
+@media(min-width: 993px) {
+  .application-container {
+    margin: 50px 100px;
+  }
+}
+
+@media(max-width: 992px) {
+  .application-container {
+    margin: 50px 70px;
+  }
+}
+
+@media(max-width: 768px) {
+  .application-container {
+    margin: 30px 50px;
+  }
+}
+
+@media(max-width: 576px) {
+  .application-container {
+    margin: 20px 30px;
+  }
+}
+
 .simple-calendar {
 
 
