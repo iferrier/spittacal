@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_23_172542) do
+ActiveRecord::Schema.define(version: 2020_02_23_174006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2020_02_23_172542) do
     t.string "occasion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "buildings", force: :cascade do |t|
@@ -35,6 +37,8 @@ ActiveRecord::Schema.define(version: 2020_02_23_172542) do
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "building_id"
+    t.index ["building_id"], name: "index_flats_on_building_id"
   end
 
   create_table "resources", force: :cascade do |t|
@@ -42,6 +46,8 @@ ActiveRecord::Schema.define(version: 2020_02_23_172542) do
     t.boolean "availibility"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "building_id"
+    t.index ["building_id"], name: "index_resources_on_building_id"
   end
 
   create_table "templates", force: :cascade do |t|
@@ -50,6 +56,8 @@ ActiveRecord::Schema.define(version: 2020_02_23_172542) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_templates_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,8 +68,15 @@ ActiveRecord::Schema.define(version: 2020_02_23_172542) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "flat_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["flat_id"], name: "index_users_on_flat_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "users"
+  add_foreign_key "flats", "buildings"
+  add_foreign_key "resources", "buildings"
+  add_foreign_key "templates", "users"
+  add_foreign_key "users", "flats"
 end
