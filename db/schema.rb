@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_23_173357) do
+ActiveRecord::Schema.define(version: 2020_02_23_173625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2020_02_23_173357) do
     t.boolean "availibility"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "building_id"
+    t.index ["building_id"], name: "index_resources_on_building_id"
   end
 
   create_table "templates", force: :cascade do |t|
@@ -67,4 +69,5 @@ ActiveRecord::Schema.define(version: 2020_02_23_173357) do
   end
 
   add_foreign_key "flats", "buildings"
+  add_foreign_key "resources", "buildings"
 end
