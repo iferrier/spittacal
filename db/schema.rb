@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_144632) do
+ActiveRecord::Schema.define(version: 2020_01_26_000237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,15 +19,9 @@ ActiveRecord::Schema.define(version: 2020_02_14_144632) do
     t.string "start_date"
     t.string "end_date"
     t.string "name"
-    t.bigint "user_id"
-    t.bigint "template_id"
+    t.string "occasion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "occasion"
-    t.bigint "resource_id"
-    t.index ["resource_id"], name: "index_bookings_on_resource_id"
-    t.index ["template_id"], name: "index_bookings_on_template_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "buildings", force: :cascade do |t|
@@ -41,43 +35,21 @@ ActiveRecord::Schema.define(version: 2020_02_14_144632) do
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "building_id"
-    t.index ["building_id"], name: "index_flats_on_building_id"
   end
 
   create_table "resources", force: :cascade do |t|
     t.string "name"
+    t.boolean "availibility"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "availibility"
   end
 
   create_table "templates", force: :cascade do |t|
     t.string "name"
-    t.string "status"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "occasion"
-    t.index ["user_id"], name: "index_templates_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "flat_id"
-    t.bigint "building_id"
-    t.index ["building_id"], name: "index_users_on_building_id"
-    t.index ["flat_id"], name: "index_users_on_flat_id"
   end
 
-  add_foreign_key "bookings", "resources"
-  add_foreign_key "bookings", "users"
-  add_foreign_key "flats", "buildings"
-  add_foreign_key "templates", "users"
-  add_foreign_key "users", "buildings"
-  add_foreign_key "users", "flats"
 end
