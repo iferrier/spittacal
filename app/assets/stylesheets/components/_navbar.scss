@@ -20,8 +20,14 @@
   display: flex;
 }
 
-.new-booking {
-  color: $custom-pink;
+.new-session {
+  a {
+    text-decoration: none;
+    color: $custom-pink;
+  }
+  a:hover {
+    color: $custom-pink;
+  }
   margin: 0 25px;
   font-size: 20px;
   padding-top: 16px;
