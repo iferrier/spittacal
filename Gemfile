@@ -17,7 +17,7 @@ gem 'webpacker'
 gem 'simple_calendar', '~> 2.3'
 gem 'icalendar', '~> 2.6', '>= 2.6.1'
 gem 'cloudinary', '~> 1.12.0'
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.4.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
