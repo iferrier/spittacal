@@ -19,6 +19,10 @@
                 input_html: { autocomplete: "new-password" } %>
     <%= f.association :building %>
     <%= f.association :flat %>
+    <%= f.label :admin %>
+    <%= f.input_field :admin, as: :boolean %>
+    <%= f.label :housecaretaker %>
+    <%= f.input_field :housecaretaker, as: :boolean %>
   </div>
 
   <div class="form-actions">
