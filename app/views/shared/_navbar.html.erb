@@ -5,7 +5,7 @@
   <div class="elements-right">
     <% if current_user %>
       <div class="my-profile">
-        <%= link_to 'My profile', user_path(current_user), class:"profil" %>
+        <%= link_to 'My profile', building_user_path(current_user.building, current_user), class:"profil" %>
       </div>
       <div class="new-session">
           <%= link_to 'Log out', destroy_user_session_path(current_user), method: :delete, class:"login" %>
