@@ -21,6 +21,8 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.association :building %>
+    <%= f.association :flat %>
   </div>
 
   <div class="form-actions">
