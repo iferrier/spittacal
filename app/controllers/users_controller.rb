@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @building = Building.find(params[:building_id])
     @user = User.find(params[:id])
   end
 
@@ -16,7 +17,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.building = @building
+    @user.building = Building.find(user_params[:building_id])
+    raise
     @flat = Flat.find(user_params[:flat_id])
     @user.flat = @flat
     if @user.save
@@ -55,6 +57,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :flat_id)
+    params.require(:user).permit(:first_name, :last_name, :email, :flat_id, :building_id)
   end
 end

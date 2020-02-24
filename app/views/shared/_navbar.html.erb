@@ -3,11 +3,17 @@
     <%= link_to( image_tag("logo.svg"), root_path, class: 'logo-navbar' )%>
   </div>
   <div class="elements-right">
-    <div class="new-booking">
-      <p>New booking</p>
-    </div>
-    <div class="my-profile">
-      <p>My profile</p>
-    </div>
+    <% if current_user %>
+      <div class="my-profile">
+        <%= link_to 'My profile', building_user_path(current_user.building, current_user) %>
+      </div>
+      <div class="new-session">
+          <%= link_to 'Log out', destroy_user_session_path(current_user), method: :delete, class:"login" %>
+      </div>
+    <% else %>
+      <div class="new-session">
+          <%= link_to 'Log in', new_user_session_path, class:"login" %>
+      </div>
+    <% end %>
   </div>
 </div>
