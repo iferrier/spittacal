@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @building = Building.find(user_params[:building_id])
+    @building = Building.find(params[:building_id])
     @user = User.find(params[:id])
   end
 

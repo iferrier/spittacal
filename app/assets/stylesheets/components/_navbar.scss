@@ -27,17 +27,23 @@
   }
   a:hover {
     color: $custom-pink;
+    text-decoration: underline;
   }
   margin: 0 25px;
   font-size: 20px;
-  padding-top: 16px;
 }
 
 .my-profile {
-  color: $custom-yellow;
-  margin: 0 35px 0 25px;
-  font-size: 20px;
-  padding-top: 16px;
+  a {
+    color: $custom-yellow;
+    font-size: 20px;
+    padding-top: 16px;
+  }
+  a:hover {
+    color: $custom-yellow;
+    text-decoration: underline;
+  }
+  margin: 0 25px;
 }
 
 .logo-navbar {
