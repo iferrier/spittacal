@@ -18,6 +18,7 @@ gem 'simple_calendar', '~> 2.3'
 gem 'icalendar', '~> 2.6', '>= 2.6.1'
 gem 'cloudinary', '~> 1.12.0'
 gem 'devise', '~> 4.7.1'
+gem 'pundit'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
