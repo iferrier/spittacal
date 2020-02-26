@@ -35,6 +35,9 @@
 
 // Styling header calendar
   .calendar-heading {
+    a {
+      font-size: 16px;
+    }
     margin: 0 15px 15px 15px;
     display: flex;
     justify-content: space-between;
@@ -49,7 +52,56 @@
 }
 
 @media(max-width: $desktop-screen) {
+  // Styling calendar
+    .simple-calendar {
 
+      .day {
+      }
+
+      .wday-0 {}
+      .wday-1 {
+      }
+      .wday-2 {}
+      .wday-3 {}
+      .wday-4 {}
+      .wday-5 {}
+      .wday-6 {}
+
+      .today {}
+      .past {}
+      .future {}
+
+      .start-date {}
+
+      .prev-month {}
+      .next-month { }
+      .current-month {
+        background-color: white;
+      }
+
+      .has-events {}
+      width: 550px;
+      height: 400px;
+      margin: 0 auto;
+    }
+
+
+  // Styling header calendar
+    .calendar-heading {
+      a {
+        font-size: 14px;
+      }
+      margin: 0 10px 10px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .calendar-title {
+      font-size: 22px;
+      color: $custom-blue;
+      padding: 15px;
+    }
 }
 
 @media(max-width: $medium-screen) {
