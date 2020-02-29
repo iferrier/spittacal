@@ -6,6 +6,11 @@ class UsersController < ApplicationController
     @users = @flat.users
   end
 
+  def show
+    @building = Building.find(params[:building_id])
+    @user = User.find(params[:id])
+  end
+
   def edit
     @user = User.find(params[:id])
   end
