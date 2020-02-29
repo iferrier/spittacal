@@ -4,7 +4,7 @@
 
 <ul>
 <% @users.each do |user| %>
-<li><%= link_to "#{user.first_name} #{user.last_name}", building_user_path(user.building, user) %>
+<li><%= link_to "#{user.first_name} #{user.last_name}", profile_path %>
   <%= link_to 'Edit', edit_building_user_path(user.building, user), class: 'crud-button' %>
   <%= link_to 'Delete', building_user_path(user.building, user), method: :delete, data: { confirm: 'Are you sure?'}, class: 'crud-button' %>
 </li>

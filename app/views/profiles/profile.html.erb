@@ -3,3 +3,11 @@
 <p><%= @user.email %></p>
 <p>Admin? <%= @user.admin %></p>
 <p>House Caretaker? <%= @user.housecaretaker %></p>
+
+<% if @user.admin? %>
+  <%= render 'profiles/admin' %>
+<% elsif @user.housecaretaker? %>
+  <%= render 'profiles/housecaretaker' %>
+<% else %>
+  <%= render 'profiles/user' %>
+<% end %>
