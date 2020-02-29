@@ -1,2 +1,5 @@
-<h1>Profiles#profile</h1>
-<p>Find me in app/views/profiles/profile.html.erb</p>
+<h1>Hallo, <%= @user.first_name %></h1>
+
+<p><%= @user.email %></p>
+<p>Admin? <%= @user.admin %></p>
+<p>House Caretaker? <%= @user.housecaretaker %></p>
