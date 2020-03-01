@@ -11,23 +11,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-    @user.building = Building.find(user_params[:building_id])
-    raise
-    @flat = Flat.find(user_params[:flat_id])
-    @user.flat = @flat
-    if @user.save
-      redirect_to building_flat_path(@building, @flat)
-    else
-      render :new
-    end
-  end
-
   def edit
     @user = User.find(params[:id])
   end
