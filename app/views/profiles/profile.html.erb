@@ -1,7 +1,10 @@
-<h1>Hallo, <%= @user.first_name %></h1>
-
-<p><%= @user.email %></p>
-
+<div class="user-info">
+  <h1>Hallo, <%= @user.first_name %></h1>
+  <div class="user-details">
+    <p>Your flat is <%= @user.flat.name %>.</p>
+    <p>Your registered email is <%= @user.email %>.</p>
+  </div>
+</div>
 
 <% if @user.admin? %>
   <%= render 'profiles/admin' %>
