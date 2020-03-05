@@ -3,10 +3,6 @@
   padding: 25px;
 }
 
-.user-info {
-  // margin-bottom: 20px;
-}
-
 .user-details {
   font-size: 14px;
   padding: 20px;
@@ -16,4 +12,12 @@
 .list-buildings {
   padding: 0;
   list-style-type: none;
+}
+
+// Styling all profiles mobile
+@media(max-width: $small-screen) {
+  .profile-tabs {
+    width: 30%;
+    margin: 0;
+  }
 }
