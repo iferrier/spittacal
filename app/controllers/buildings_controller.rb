@@ -5,10 +5,12 @@ class BuildingsController < ApplicationController
 
   def new
     @building = Building.new
+    authorize @building
   end
 
   def create
     @building = Building.new(building_params)
+    authorize @building
     if @building.save
       redirect_to building_path(@building)
     else
@@ -18,6 +20,7 @@ class BuildingsController < ApplicationController
 
   def show
     @building = Building.find(params[:id])
+    authorize @building
     @flats = @building.flats
     @flat = Flat.new
     @user = User.new
