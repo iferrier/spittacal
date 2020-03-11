@@ -1,7 +1,9 @@
 class BuildingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user: user_is_admin?)
+      if user.admin?
+        scope.all
+      end
     end
   end
 
