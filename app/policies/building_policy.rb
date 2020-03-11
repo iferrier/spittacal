@@ -1,9 +1,7 @@
 class BuildingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      if user.admin?
-        scope.all
-      end
+      scope.all if user.admin
     end
   end
 
@@ -24,7 +22,7 @@ class BuildingPolicy < ApplicationPolicy
   end
 
   def profile?
-    true
+    user_is_admin?
   end
 
   private

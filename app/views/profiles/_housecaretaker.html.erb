@@ -18,7 +18,7 @@
     <p>test tab profile</p>
   </div>
   <div class="tab-pane fade styling-tab" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-    <% @building.flats.each do |flat| %>
+    <% @flats.each do |flat| %>
       <ul class="list-buildings">
         <li><%= link_to flat.name, building_flat_path(@building, flat) %></li>
       </ul>

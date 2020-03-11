@@ -5,5 +5,7 @@ class ProfilesController < ApplicationController
     authorize @buildings
     @building = current_user.building
     authorize @building
+    @flats = @building.flats
+    authorize @flats
   end
 end

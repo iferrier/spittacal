@@ -1,7 +1,7 @@
 class FlatPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.all if user.admin || user.housecaretaker
     end
   end
 
@@ -18,6 +18,10 @@ class FlatPolicy < ApplicationPolicy
   end
 
   def destroy?
+    user_is_allowed?
+  end
+
+  def profile?
     user_is_allowed?
   end
 
