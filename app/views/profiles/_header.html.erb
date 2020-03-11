@@ -5,11 +5,3 @@
     <p>Your registered email is <%= @user.email %>.</p>
   </div>
 </div>
-
-<% if @user.admin? %>
-  <%= render 'profiles/admin' %>
-<% elsif @user.housecaretaker? %>
-  <%= render 'profiles/housecaretaker' %>
-<% else %>
-  <%= render 'profiles/user' %>
-<% end %>

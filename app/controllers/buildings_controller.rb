@@ -1,6 +1,6 @@
 class BuildingsController < ApplicationController
   def index
-    @buildings = Building.all
+    @buildings = policy_scope(Building).order(name: :asc)
   end
 
   def new

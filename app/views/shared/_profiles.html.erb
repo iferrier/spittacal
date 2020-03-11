@@ -1,0 +1,7 @@
+<% if current_user.admin? %>
+  <%= link_to 'My profile', a_profile_path %>
+<% elsif current_user.housecaretaker? %>
+  <%= link_to 'My profile', hct_profile_path %>
+<% else %>
+  <%= link_to 'My profile', profile_path %>
+<% end %>
