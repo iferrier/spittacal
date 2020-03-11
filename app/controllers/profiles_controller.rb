@@ -9,15 +9,13 @@ class ProfilesController < ApplicationController
     authorize @user
     @buildings = Building.all.order(name: :asc)
     authorize @buildings
-    @flats = @building.flats
-    authorize @flats
   end
 
   def housecaretaker_profile
     @user = current_user
     @building = current_user.building
     authorize @building
-    @flats = @building.flats
+    @flats = @building.flats.order(name: :asc)
     authorize @flats
   end
 end

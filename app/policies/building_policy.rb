@@ -25,6 +25,10 @@ class BuildingPolicy < ApplicationPolicy
     user_is_housecaretaker?
   end
 
+  def admin_profile?
+    user_is_admin?
+  end
+
   private
 
   def user_is_admin?

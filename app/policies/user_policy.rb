@@ -8,4 +8,8 @@ class UserPolicy < ApplicationPolicy
   def user_profile?
     true
   end
+
+  def admin_profile?
+    true
+  end
 end
