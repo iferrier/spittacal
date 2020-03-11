@@ -21,7 +21,7 @@ class FlatPolicy < ApplicationPolicy
     user_is_allowed?
   end
 
-  def profile?
+  def housecaretaker_profile?
     user_is_allowed?
   end
 

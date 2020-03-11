@@ -21,13 +21,17 @@ class BuildingPolicy < ApplicationPolicy
     user_is_admin?
   end
 
-  def profile?
-    user_is_admin?
+  def housecaretaker_profile?
+    user_is_housecaretaker?
   end
 
   private
 
   def user_is_admin?
     user.admin
+  end
+
+  def user_is_housecaretaker?
+    user.housecaretaker
   end
 end
