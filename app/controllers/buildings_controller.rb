@@ -9,11 +9,11 @@ class BuildingsController < ApplicationController
   end
 
   def create
-    @user = current_user
+    # @user = current_user
     @building = Building.new(building_params)
     authorize @building
     if @building.save
-      redirect_to a_profile_path(@user)
+      redirect_to a_profile_path
     else
       render :new
     end
@@ -28,11 +28,10 @@ class BuildingsController < ApplicationController
   end
 
   def destroy
-    @user = current_user
     @building = Building.find(params[:id])
     authorize @building
     @building.destroy
-    redirect_to a_profile_path(@user)
+    redirect_to a_profile_path
   end
 
   private
