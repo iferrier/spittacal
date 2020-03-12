@@ -7,11 +7,13 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
+    authorize @flat
   end
 
   def create
     @flat = Flat.new(flat_params)
     @flat.building = @building
+    authorize @flat
     if @flat.save
       redirect_to building_path(@building)
     else

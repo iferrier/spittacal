@@ -24,6 +24,6 @@
         <li><%= link_to flat.name, building_flat_path(@building, flat) %></li>
       </ul>
     <% end %>
-    <%= link_to 'See the building page', building_path(@building), class: 'create-button' %>
+    <%= link_to 'Create a flat', new_building_flat_path(@building), class: 'create-button' %>
   </div>
 </div>
