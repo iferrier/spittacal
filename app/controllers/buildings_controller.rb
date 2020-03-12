@@ -9,10 +9,11 @@ class BuildingsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @building = Building.new(building_params)
     authorize @building
     if @building.save
-      redirect_to building_path(@building)
+      redirect_to a_profile_path(@user)
     else
       render :new
     end
