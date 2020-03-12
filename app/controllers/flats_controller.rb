@@ -38,6 +38,7 @@ class FlatsController < ApplicationController
 
   def destroy
     @flat = Flat.find(params[:id])
+    authorize @flat
     @flat.destroy
     redirect_to building_path(@flat.building)
   end
