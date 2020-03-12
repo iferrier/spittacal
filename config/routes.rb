@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'profile', to: 'profiles#user_profile'
   get 'a-profile', to: 'profiles#admin_profile'
   get 'hct-profile', to: 'profiles#housecaretaker_profile'
-  resources :buildings, only: [:index, :new, :create, :show] do
+  resources :buildings, only: [:index, :new, :create, :show, :destroy] do
     resources :flats
     resources :users
   end

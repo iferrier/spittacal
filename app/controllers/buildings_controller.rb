@@ -27,9 +27,11 @@ class BuildingsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @building = Building.find(params[:id])
     authorize @building
     @building.destroy
+    redirect_to a_profile_path(@user)
   end
 
   private
