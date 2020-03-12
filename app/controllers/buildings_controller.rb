@@ -26,6 +26,12 @@ class BuildingsController < ApplicationController
     @user = User.new
   end
 
+  def destroy
+    @building = Building.find(params[:id])
+    authorize @building
+    @building.destroy
+  end
+
   private
   def building_params
     params.require(:building).permit(:name)
