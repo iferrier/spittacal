@@ -21,9 +21,11 @@
   <div class="tab-pane fade styling-tab" id="contact" role="tabpanel" aria-labelledby="contact-tab">
     <% @flats.each do |flat| %>
       <ul class="list-buildings">
-        <li><%= link_to flat.name, building_flat_path(@building, flat) %></li>
+        <li><%= link_to flat.name, building_flat_path(@building, flat) %>
+          <%= link_to image_tag('corb'), building_flat_path(@building, flat), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
       </ul>
     <% end %>
-    <%= link_to 'See the building page', building_path(@building), class: 'create-button' %>
+    <%= link_to 'Create a flat', new_building_flat_path(@building), class: 'create-button' %>
   </div>
 </div>

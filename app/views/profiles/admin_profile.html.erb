@@ -21,7 +21,9 @@
   <div class="tab-pane fade styling-tab" id="contact" role="tabpanel" aria-labelledby="contact-tab">
     <% @buildings.each do |building| %>
       <ul class="list-buildings">
-        <li><%= link_to building.name, building_path(building) %></li>
+        <li><%= link_to building.name, building_path(building) %>
+            <%= link_to image_tag('corb'), building_path(building), method: :delete, data: { confirm: "Are you sure to delete this building?" } %>
+        </li>
       </ul>
     <% end %>
     <%= link_to 'Create a building', new_building_path, class: 'create-button' %>

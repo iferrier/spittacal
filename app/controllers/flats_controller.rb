@@ -7,13 +7,15 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
+    authorize @flat
   end
 
   def create
     @flat = Flat.new(flat_params)
     @flat.building = @building
+    authorize @flat
     if @flat.save
-      redirect_to building_path(@building)
+      redirect_to hct_profile_path
     else
       render :new
     end
@@ -31,13 +33,14 @@ class FlatsController < ApplicationController
   def update
     @flat = Flat.find(params[:id])
     @flat.update(flat_params)
-    redirect_to building_path(@building)
+    redirect_to hct_profile_path
   end
 
   def destroy
     @flat = Flat.find(params[:id])
+    authorize @flat
     @flat.destroy
-    redirect_to building_path(@flat.building)
+    redirect_to hct_profile_path
   end
 
   private
