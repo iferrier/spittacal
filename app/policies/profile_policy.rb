@@ -9,6 +9,10 @@ class ProfilePolicy < ApplicationPolicy
     true
   end
 
+  def housecaretaker_profile?
+    true
+  end
+
   def admin_profile?
     true
   end
