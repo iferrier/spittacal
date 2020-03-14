@@ -1,10 +1,13 @@
 // Toggle content
 
-const name = document.querySelector('.name');
+const names = document.querySelectorAll('.name');
 const description = document.querySelector('.description')
 
-const toggleContent = () => { name.addEventListener('click', event => {
-    description.classList.toggle('is-visible');
+const toggleContent = () => { names.forEach(name => {
+    name.addEventListener('click', event => {
+      console.log(event);
+      description.classList.toggle('is-visible');
+    })
   })
 };
 

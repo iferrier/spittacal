@@ -20,10 +20,14 @@
   </div>
   <div class="tab-pane fade styling-tab" id="contact" role="tabpanel" aria-labelledby="contact-tab">
     <% @flats.each do |flat| %>
-      <ul class="list-buildings">
+      <ul class="lists">
         <li class='name'><%= flat.name %>
           <%= link_to image_tag('corb'), building_flat_path(@building, flat), method: :delete, data: { confirm: 'Are you sure?' } %>
-          <p class='description'>test</p>
+          <% flat.users.each do |user| %>
+            <ul class="lists">
+              <li class='description'><%= user.first_name %></li>
+            </ul>
+          <% end %>
         </li>
       </ul>
     <% end %>
