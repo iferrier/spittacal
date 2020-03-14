@@ -1,6 +1,6 @@
 import "bootstrap";
 import { toggleContent } from './toggle';
 
-// Housecaretaker Profile
+// Toggle content
 toggleContent();
 

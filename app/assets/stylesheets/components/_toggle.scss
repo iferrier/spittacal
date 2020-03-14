@@ -1,0 +1,20 @@
+// Hoover for pseudo link
+.name {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: $custom-blue;
+  }
+}
+
+//Classes to toggle content
+.description {
+  display: none;
+}
+
+.description.is-visible {
+  display: block;
+  color: black;
+}
+

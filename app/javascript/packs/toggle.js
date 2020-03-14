@@ -1,4 +1,4 @@
-// Toggle content HTC profile
+// Toggle content
 
 const name = document.querySelector('.name');
 const description = document.querySelector('.description')
