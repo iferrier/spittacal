@@ -21,3 +21,12 @@
     margin: 0;
   }
 }
+
+//Toggle content
+.description {
+  display: none;
+}
+
+.description.is-visible {
+  display: block;
+}

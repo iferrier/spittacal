@@ -1,10 +1,11 @@
 // Toggle content HTC profile
 
-const flatName = document.querySelector('.flat-name');
-const flatDescription = document.querySelector('.flat-users');
+const name = document.querySelector('.name');
+const description = document.querySelector('.description')
 
-const toggleFlatUsers = flatName.addEventListener('click', (event) => {
-  flatName.classList.toggle(".flat-users");
-})
+const toggleContent = () => { name.addEventListener('click', event => {
+    description.classList.toggle('is-visible');
+  })
+};
 
-export { toggleFlatUsers };
+export { toggleContent };
