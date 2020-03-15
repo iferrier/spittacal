@@ -11,6 +11,8 @@
 <% end %>
 </ul>
 
+<p><%= link_to 'Add a user', new_user_invitation_path, class: 'crud-button' %></p>
+
 <% if current_user.housecaretaker? %>
   <%= link_to 'Back to profile', hct_profile_path %>
 <% elsif current_user.admin? %>
