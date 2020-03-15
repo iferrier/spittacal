@@ -11,5 +11,9 @@
 <% end %>
 </ul>
 
-<%= link_to 'Back to profile', hct_profile_path %>
+<% if current_user.housecaretaker? %>
+  <%= link_to 'Back to profile', hct_profile_path %>
+<% elsif current_user.admin? %>
+  <%= link_to 'Back to building', building_path(@building) %>
+<% end %>
 
