@@ -1,6 +1,9 @@
-<%= simple_form_for [@building, @flat] do |f| %>
-<%= f.input :name %>
-<%= f.input :color %>
-<%= f.submit 'SUBMIT', class: 'create-button' %>
-<% end %>
+<div class="form">
+  <h2>Create a flat</h2>
+  <%= simple_form_for [@building, @flat] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :color %>
+  <%= f.submit 'SUBMIT', class: 'create-button' %>
+  <% end %>
+</div>
 
