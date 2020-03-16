@@ -6,6 +6,10 @@
   <% resource.class.invite_key_fields.each do |field| -%>
     <div class="form-inputs">
       <%= f.input field %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.association :building %>
+      <%= f.association :flat %>
 
     </div>
   <% end -%>

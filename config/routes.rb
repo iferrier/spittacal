@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  default_url_options :host => "localhost"
   root to: 'pages#home'
   devise_for :users, controllers: { invitations: 'users/invitations' }
   get 'profile', to: 'profiles#user_profile'
