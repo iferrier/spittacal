@@ -22,7 +22,7 @@ class BuildingsController < ApplicationController
   def show
     @building = Building.find(params[:id])
     authorize @building
-    @flats = @building.flats
+    @flats = @building.flats.order(name: :asc)
     @flat = Flat.new
     @user = User.new
   end

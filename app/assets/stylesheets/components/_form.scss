@@ -1,0 +1,30 @@
+@media(min-width: $large-screen) {
+  .form {
+    width: 700px;
+    height: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media(max-width: $desktop-screen) {
+  .form {
+    width: 550px;
+    height: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media(max-width: $medium-screen) {
+  .form {
+    width: 450px;
+    margin: 0 auto;
+  }
+}
+
+@media(max-width: $small-screen) {
+  .form {
+    width: 260px;
+    margin: 0 auto;
+  }
+}
+

@@ -1,5 +1,8 @@
 <ul>
   <% @flats.each do |flat| %>
-  <li><%= link_to flat.name,  building_flat_path(flat.building, flat) %></li>
+  <li class='lists'>
+    <%= link_to flat.name,  building_flat_path(flat.building, flat) %>
+    <%= link_to image_tag('corb'), building_flat_path(@building, flat), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </li>
   <% end %>
 </ul>
