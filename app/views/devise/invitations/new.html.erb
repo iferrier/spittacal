@@ -1,20 +1,21 @@
-<h2><%= t "devise.invitations.new.header" %></h2>
+<div class="form">
+  <h2><%= t "devise.invitations.new.header" %></h2>
+  <%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+    <% resource.class.invite_key_fields.each do |field| -%>
+      <div class="form-inputs">
+        <%= f.input field %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.association :building %>
+        <%= f.association :flat %>
 
-  <% resource.class.invite_key_fields.each do |field| -%>
-    <div class="form-inputs">
-      <%= f.input field %>
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.association :building %>
-      <%= f.association :flat %>
+      </div>
+    <% end -%>
 
+    <div class="form-actions">
+        <%= f.button :submit, t("devise.invitations.new.submit_button"), class: 'create-button' %>
     </div>
-  <% end -%>
-
-  <div class="form-actions">
-    <%= f.button :submit, t("devise.invitations.new.submit_button"), class: 'create-button' %>
-  </div>
-<% end %>
+  <% end %>
+</div>
