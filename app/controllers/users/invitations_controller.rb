@@ -24,7 +24,7 @@ class Users::InvitationsController < Devise::InvitationsController
     end
   end
 
-  private
+  protected
 
   def invite_resource(&block)
     resource_class.invite!(invite_params, current_inviter, &block)
