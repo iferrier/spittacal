@@ -22,6 +22,8 @@ class Users::InvitationsController < Devise::InvitationsController
     else
       respond_with_navigational(resource) { render :new }
     end
+
+    raise
   end
 
   protected
