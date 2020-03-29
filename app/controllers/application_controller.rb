@@ -9,10 +9,9 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-      user_params.permit(:first_name, :last_name, :email, :password, :password_confirmation, :flat_id,
-                         :building_id, :admin, :housecaretaker)
-    end
+    devise_parameter_sanitizer.permit(:accept_invitation,
+      keys: [:first_name, :last_name, :email, :password, :password_confirmation,
+              :flat_id, :building_id, :admin, :housecaretaker])
   end
 
   def skip_pundit?
