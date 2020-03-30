@@ -14,6 +14,7 @@ class Users::InvitationsController < Devise::InvitationsController
   end
 
   def create
+    binding.pry
     self.resource = invite_resource
     resource_invited = resource.errors.empty?
 
