@@ -10,6 +10,12 @@
         <%= f.input :last_name %>
         <%= f.association :building %>
         <%= f.association :flat %>
+        <% if current_user.admin %>
+          <%= f.label :admin %>
+          <%= f.input_field :admin, as: :boolean %>
+          <%= f.label :housecaretaker %>
+          <%= f.input_field :housecaretaker, as: :boolean %>
+        <% end %>
 
       </div>
     <% end -%>
