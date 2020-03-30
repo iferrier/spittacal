@@ -1,4 +1,13 @@
 class Users::InvitationsController < Devise::InvitationsController
+  prepend_before_action :authenticate_inviter!, only: [:new, :create]
+  prepend_before_action :has_invitations_left?, only: [:create]
+  prepend_before_action :require_no_authentication, only: [:edit, :update, :destroy]
+  prepend_before_action :resource_from_invitation_token, only: [:edit, :destroy]
+
+  if respond_to? :helper_method
+    helper_method :after_sign_in_path_for
+  end
+
   def new
     self.resource = resource_class.new
     render :new
