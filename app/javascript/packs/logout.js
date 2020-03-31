@@ -1,1 +1,5 @@
-const logout = document.querySelector('');
+const logout = document.querySelector('.logout');
+
+logout.addEventListener('click', event => {
+  console.log(event);
+})
