@@ -1,5 +1,10 @@
 const logout = document.querySelector('.logout');
 
-logout.addEventListener('click', event => {
-  console.log(event);
-})
+const redirectLogout = () => {
+  logout.addEventListener('click', (event) => {
+    document.location.reload(true);
+  });
+}
+
+export { redirectLogout } ;
+
