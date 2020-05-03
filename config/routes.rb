@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   namespace :api, defaults: { format: :json } do
       namespace :v1 do
-        resources :booking, only: [ :index ]
+        resources :bookings, only: [ :index ]
       end
     end
 end
