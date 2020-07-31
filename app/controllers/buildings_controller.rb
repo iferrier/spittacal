@@ -35,6 +35,7 @@ class BuildingsController < ApplicationController
   end
 
   private
+
   def building_params
     params.require(:building).permit(:name)
   end
