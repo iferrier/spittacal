@@ -9,4 +9,9 @@ Rails.application.routes.draw do
     resources :flats
     resources :users
   end
+  namespace :api, defaults: { format: :json } do
+      namespace :v1 do
+        resources :bookings, only: [ :index ]
+      end
+    end
 end
